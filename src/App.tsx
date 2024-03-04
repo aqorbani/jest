@@ -1,10 +1,10 @@
-import Register from "./components/Register";
+import AR from "./route";
 
 function App() {
   return (
     <>
       <div className="p-2">
-        <Register />
+        <AR />
       </div>
     </>
   );
