@@ -1,7 +1,11 @@
+import Register from "./components/Register";
+
 function App() {
   return (
     <>
-      <div className="p-2">hello</div>
+      <div className="p-2">
+        <Register />
+      </div>
     </>
   );
 }
