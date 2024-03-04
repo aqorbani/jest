@@ -30,12 +30,13 @@ export default function Register() {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
+    <div className="p-2 flex flex-col justify-center items-center">
+      <h3 className="font-extrabold text-2xl">ثبت نام</h3>
       {error && <p className="text-red-800 font-semibold">{error}</p>}
-      <div>
+      <div className="w-80 m-1 bg-orange-300 p-2 rounded">
         <label htmlFor="email">ایمیل</label>
         <input
+          className="w-full"
           type="email"
           id="email"
           name="email"
@@ -43,9 +44,10 @@ export default function Register() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div className="w-80 m-1 bg-orange-300 p-2 rounded">
         <label htmlFor="password">رمز عبور</label>
         <input
+          className="w-full"
           type="password"
           id="password"
           name="password"
@@ -53,9 +55,10 @@ export default function Register() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div className="w-80 m-1 bg-orange-300 p-2 rounded">
         <label htmlFor="confirmPassword">تکرار رمز عبور</label>
         <input
+          className="w-full"
           type="confirmPassword"
           id="confirmPassword"
           name="confirmPassword"
@@ -63,8 +66,9 @@ export default function Register() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div className="w-80">
         <button
+          className="w-full bg-orange-900 rounded text-white"
           type="submit"
           onClick={submitHandler}
           disabled={
