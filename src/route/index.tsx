@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../components/Register";
 import Products from "../components/Products";
 
@@ -9,10 +10,12 @@ export const AppRouter = () => (
   </Routes>
 );
 
-export default function AR() {
+function AR() {
   return (
     <BrowserRouter>
       <AppRouter />
     </BrowserRouter>
   );
 }
+
+export default AR;

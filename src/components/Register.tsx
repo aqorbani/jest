@@ -4,6 +4,7 @@ import { EMAIL_PATTERN, ERROR_MESSAGE } from "../constants/validation";
 import { utils } from "../helper/empty";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [registerInput, setRegisterInput] = useState({
     email: "",
     password: "",
@@ -11,8 +12,6 @@ export default function Register() {
   });
 
   const [error, setError] = useState("");
-
-  const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setRegisterInput({ ...registerInput, [e.target.name]: e.target.value });
