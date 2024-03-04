@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { EMAIL_PATTERN, ERROR_MESSAGE } from "../constants/validation";
+import { utils } from "../helper/empty";
 
 export default function Register() {
   const [registerInput, setRegisterInput] = useState({
@@ -63,7 +64,15 @@ export default function Register() {
         />
       </div>
       <div>
-        <button type="submit" onClick={submitHandler}>
+        <button
+          type="submit"
+          onClick={submitHandler}
+          disabled={
+            utils.isEmpty(registerInput.email) ||
+            utils.isEmpty(registerInput.password) ||
+            utils.isEmpty(registerInput.confirmPassword)
+          }
+        >
           ثبت نام
         </button>
       </div>
