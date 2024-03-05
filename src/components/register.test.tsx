@@ -45,11 +45,33 @@ describe("Register page", () => {
   });
   test("should be able to type into inputs and get value", async () => {
     const user = userEvent.setup()
-    const emailInput: HTMLInputElement = screen.getByLabelText("ایمیل");
 
-    user.type(getElement("email"), "a@a.com");
 
-    await waitFor(() => expect(getElement("email").value).toBe("a@a.com"),)
+
+    await waitFor(() => {
+      user.type(getElement("email"), "a@a.com");
+    })
+
+
+    await waitFor(() => {
+      expect(getElement("email").value).toBe("a@a.com");
+    })
+
+    await waitFor(() => {
+      user.type(getElement("password"), "12345");
+    })
+
+
+    await waitFor(() => {
+      expect(getElement("password").value).toBe("12345");
+    })
+    await waitFor(() => {
+      user.type(getElement("confPassword"), "12345");
+    })
+
+    await waitFor(() => {
+      expect(getElement("confPassword").value).toBe("12345");
+    })
 
 
   })
