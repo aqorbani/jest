@@ -89,6 +89,8 @@ describe("Register page", () => {
   describe("Handle errors and navigation", () => {
     beforeEach(() => {
       expect(screen.queryByText(ERROR_MESSAGE.EMAIL)).not.toBeInTheDocument()
+      expect(screen.queryByText(ERROR_MESSAGE.PASSWORD)).not.toBeInTheDocument()
+      expect(screen.queryByText(ERROR_MESSAGE.CONFIRM_PASSWORD)).not.toBeInTheDocument()
     });
     test("Should show email error when intering invalid email", async () => {
       const user = userEvent.setup()
@@ -100,6 +102,28 @@ describe("Register page", () => {
 
       expect(screen.getByText(ERROR_MESSAGE.EMAIL)).toBeInTheDocument()
 
-    })
+    });
+    test("Should show password error when intering invalid password", async () => {
+      const user = userEvent.setup()
+      await user.type(getElement("email"), "a@a.com")
+      await user.type(getElement("password"), "123");
+      await user.type(getElement("confPassword"), "12345");
+
+      await user.click(getElement("Button"));
+
+      expect(screen.getByText(ERROR_MESSAGE.PASSWORD)).toBeInTheDocument()
+
+    });
+    test("Should show confirm password error when intering invalid confirm password", async () => {
+      const user = userEvent.setup()
+      await user.type(getElement("email"), "a@a.com")
+      await user.type(getElement("password"), "12345");
+      await user.type(getElement("confPassword"), "123");
+
+      await user.click(getElement("Button"));
+
+      expect(screen.getByText(ERROR_MESSAGE.CONFIRM_PASSWORD)).toBeInTheDocument()
+
+    });
   })
 });
