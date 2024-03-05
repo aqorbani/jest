@@ -3,6 +3,7 @@ import Register from "./Register";
 import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import '@testing-library/jest-dom'
+import { utils } from "../helper/empty";
 
 
 const getElement = (element: string) => {
@@ -63,5 +64,14 @@ describe("Register page", () => {
   });
   test("Button should be disabled when all of the inputs are empty", () => {
     expect(getElement("Button")).toBeDisabled();
+
+    // jest spyOn
+    const isEmpty: any = jest.spyOn(utils, "isEmpty");
+    utils.isEmpty(getElement("email").value)
+    utils.isEmpty(getElement("password").value)
+    utils.isEmpty(getElement("confPassword").value)
+
+    expect(isEmpty).toHaveBeenCalledTimes(3)
+
   })
 });
