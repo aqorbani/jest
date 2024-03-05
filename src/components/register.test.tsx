@@ -1,7 +1,9 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Register from "./Register";
 import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
+import '@testing-library/jest-dom'
+
 
 const getElement = (element: string) => {
   interface Obj {
@@ -13,6 +15,7 @@ const getElement = (element: string) => {
     "email": screen.getByRole("textbox", { name: "ایمیل" }),
     "password": screen.getByLabelText("رمز عبور"),
     "confPassword": screen.getByLabelText("تکرار رمز عبور"),
+    "Button": screen.getByRole("button", { name: "ثبت نام" })
   };
   if (elements[element as keyof Obj]) return elements[element as keyof Obj];
 };
@@ -57,5 +60,8 @@ describe("Register page", () => {
     expect(getElement("confPassword").value).toBe("12345");
 
 
+  });
+  test("Button should be disabled when all of the inputs are empty", () => {
+    expect(getElement("Button")).toBeDisabled();
   })
 });
