@@ -74,4 +74,14 @@ describe("Register page", () => {
     expect(isEmpty).toHaveBeenCalledTimes(3)
 
   })
+  test("Button should be Enabled when all of the inputs are filled", async () => {
+    const user = userEvent.setup()
+    await user.type(getElement("email"), "a@a.com");
+    await user.type(getElement("password"), "12345");
+    await user.type(getElement("confPassword"), "12345");
+
+    expect(getElement("Button")).toBeEnabled();
+    expect(getElement("Button")).not.toBeDisabled();
+
+  })
 });
