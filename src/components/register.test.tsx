@@ -48,30 +48,13 @@ describe("Register page", () => {
 
 
 
-    await waitFor(() => {
-      user.type(getElement("email"), "a@a.com");
-    })
+    await user.type(getElement("email"), "a@a.com");
+    await user.type(getElement("password"), "12345");
+    await user.type(getElement("confPassword"), "12345");
 
-
-    await waitFor(() => {
-      expect(getElement("email").value).toBe("a@a.com");
-    })
-
-    await waitFor(() => {
-      user.type(getElement("password"), "12345");
-    })
-
-
-    await waitFor(() => {
-      expect(getElement("password").value).toBe("12345");
-    })
-    await waitFor(() => {
-      user.type(getElement("confPassword"), "12345");
-    })
-
-    await waitFor(() => {
-      expect(getElement("confPassword").value).toBe("12345");
-    })
+    expect(getElement("email").value).toBe("a@a.com");
+    expect(getElement("password").value).toBe("12345");
+    expect(getElement("confPassword").value).toBe("12345");
 
 
   })
