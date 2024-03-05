@@ -143,5 +143,9 @@ describe("Register page", () => {
       expect(mockUseNavigate).toHaveBeenCalledWith('/products')
 
     });
+    test("snapshot", () => {
+      const view = render(<Register />)
+      expect(view).toMatchSnapshot()
+    })
   })
 });

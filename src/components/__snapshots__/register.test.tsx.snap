@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register page Handle errors and navigation snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="p-2 flex flex-col justify-center items-center"
+      >
+        <h3
+          class="font-extrabold text-2xl"
+        >
+          ثبت نام
+        </h3>
+        <div
+          class="w-80 m-1 bg-orange-300 p-2 rounded"
+        >
+          <label
+            for="email"
+          >
+            ایمیل
+          </label>
+          <input
+            class="w-full"
+            id="email"
+            name="email"
+            placeholder="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="w-80 m-1 bg-orange-300 p-2 rounded"
+        >
+          <label
+            for="password"
+          >
+            رمز عبور
+          </label>
+          <input
+            class="w-full"
+            id="password"
+            name="password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          class="w-80 m-1 bg-orange-300 p-2 rounded"
+        >
+          <label
+            for="confirmPassword"
+          >
+            تکرار رمز عبور
+          </label>
+          <input
+            class="w-full"
+            id="confirmPassword"
+            name="confirmPassword"
+            type="confirmPassword"
+            value=""
+          />
+        </div>
+        <div
+          class="w-80"
+        >
+          <button
+            class="w-full bg-orange-900 rounded text-white"
+            type="submit"
+          >
+            ثبت نام
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="p-2 flex flex-col justify-center items-center"
+      >
+        <h3
+          class="font-extrabold text-2xl"
+        >
+          ثبت نام
+        </h3>
+        <div
+          class="w-80 m-1 bg-orange-300 p-2 rounded"
+        >
+          <label
+            for="email"
+          >
+            ایمیل
+          </label>
+          <input
+            class="w-full"
+            id="email"
+            name="email"
+            placeholder="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="w-80 m-1 bg-orange-300 p-2 rounded"
+        >
+          <label
+            for="password"
+          >
+            رمز عبور
+          </label>
+          <input
+            class="w-full"
+            id="password"
+            name="password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          class="w-80 m-1 bg-orange-300 p-2 rounded"
+        >
+          <label
+            for="confirmPassword"
+          >
+            تکرار رمز عبور
+          </label>
+          <input
+            class="w-full"
+            id="confirmPassword"
+            name="confirmPassword"
+            type="confirmPassword"
+            value=""
+          />
+        </div>
+        <div
+          class="w-80"
+        >
+          <button
+            class="w-full bg-orange-900 rounded text-white"
+            type="submit"
+          >
+            ثبت نام
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="p-2 flex flex-col justify-center items-center"
+    >
+      <h3
+        class="font-extrabold text-2xl"
+      >
+        ثبت نام
+      </h3>
+      <div
+        class="w-80 m-1 bg-orange-300 p-2 rounded"
+      >
+        <label
+          for="email"
+        >
+          ایمیل
+        </label>
+        <input
+          class="w-full"
+          id="email"
+          name="email"
+          placeholder="email"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="w-80 m-1 bg-orange-300 p-2 rounded"
+      >
+        <label
+          for="password"
+        >
+          رمز عبور
+        </label>
+        <input
+          class="w-full"
+          id="password"
+          name="password"
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        class="w-80 m-1 bg-orange-300 p-2 rounded"
+      >
+        <label
+          for="confirmPassword"
+        >
+          تکرار رمز عبور
+        </label>
+        <input
+          class="w-full"
+          id="confirmPassword"
+          name="confirmPassword"
+          type="confirmPassword"
+          value=""
+        />
+      </div>
+      <div
+        class="w-80"
+      >
+        <button
+          class="w-full bg-orange-900 rounded text-white"
+          type="submit"
+        >
+          ثبت نام
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
