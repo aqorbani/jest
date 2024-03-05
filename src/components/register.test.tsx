@@ -1,6 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import Register from "./Register";
 import { BrowserRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 
 const getElement = (element: string) => {
   interface Obj {
@@ -17,13 +18,15 @@ const getElement = (element: string) => {
 };
 
 describe("Register page", () => {
-  test("Input should be initially empty", () => {
-    // ARRANGE
+  beforeEach(() => {
     render(
       <BrowserRouter>
         <Register />
-      </BrowserRouter>
-    );
+      </BrowserRouter>);
+  });
+  test("Input should be initially empty", () => {
+    // ARRANGE
+
 
     // ACT
     // change event - click event or ...
@@ -40,4 +43,14 @@ describe("Register page", () => {
     // finaAll...
     // queryAll...
   });
+  test("should be able to type into inputs and get value", async () => {
+    const user = userEvent.setup()
+    const emailInput: HTMLInputElement = screen.getByLabelText("ایمیل");
+
+    user.type(getElement("email"), "a@a.com");
+
+    await waitFor(() => expect(getElement("email").value).toBe("a@a.com"),)
+
+
+  })
 });

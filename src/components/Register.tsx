@@ -39,6 +39,7 @@ export default function Register() {
           type="email"
           id="email"
           name="email"
+          placeholder="email"
           value={registerInput.email}
           onChange={handleChange}
         />
