@@ -11,10 +11,8 @@ export default function Products() {
   const { data, loading } = useFetch(`${API_BASE_ADDRESS}/products`);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setProducts([...json]))
-  })
+    setProducts(data);
+  }, [loading]);
 
   useEffect(() => {
     let productsFiltered = [...products];
@@ -28,6 +26,7 @@ export default function Products() {
   const allProducts = filteredProducts.length ? filteredProducts : products;
 
   return <div>
+    <h2>Products</h2>
     {
       loading ? "Loading" : (
         <>

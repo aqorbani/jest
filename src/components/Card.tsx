@@ -15,7 +15,7 @@ export default function Card(props: object) {
             <p>{description}</p>
             <div>{rating.rate} &#9650;</div>
 
-            <button className={selected ? "selected" : ""} onClick={onAdd}>
+            <button onClick={onAdd}>
                 {selected ? "selected" : "Add to Cart"}
             </button>
         </div>
