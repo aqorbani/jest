@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import '@testing-library/jest-dom'
 import { utils } from "../helper/empty";
+import { ERROR_MESSAGE } from "../constants/validation";
 
 
 const getElement = (element: string) => {
@@ -83,5 +84,22 @@ describe("Register page", () => {
     expect(getElement("Button")).toBeEnabled();
     expect(getElement("Button")).not.toBeDisabled();
 
+  });
+
+  describe("Handle errors and navigation", () => {
+    beforeEach(() => {
+      expect(screen.queryByText(ERROR_MESSAGE.EMAIL)).not.toBeInTheDocument()
+    });
+    test("Should show email error when intering invalid email", async () => {
+      const user = userEvent.setup()
+      await user.type(getElement("email"), "abc.com")
+      await user.type(getElement("password"), "12345");
+      await user.type(getElement("confPassword"), "12345");
+
+      await user.click(getElement("Button"));
+
+      expect(screen.getByText(ERROR_MESSAGE.EMAIL)).toBeInTheDocument()
+
+    })
   })
 });
