@@ -9,8 +9,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "react-scripts test",
-    "test:watch": "react-scripts test --watchAll ",
-    "test:coverage": "react-scripts test --coverage",
+    "test:watch": "react-scripts test --watchAll",
+    "test:coverage": "react-scripts test --watchAll --coverage",
     "test:report": "react-scripts test --env=jsdom --reporters=default --reporters=jest-html-reporters"
   },
   "dependencies": {
