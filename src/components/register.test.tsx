@@ -22,6 +22,13 @@ const getElement = (element: string) => {
   if (elements[element as keyof Obj]) return elements[element as keyof Obj];
 };
 
+// simulating the navigation behavior
+const mockUseNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockUseNavigate
+}))
+
 describe("Register page", () => {
   beforeEach(() => {
     render(
@@ -123,6 +130,17 @@ describe("Register page", () => {
       await user.click(getElement("Button"));
 
       expect(screen.getByText(ERROR_MESSAGE.CONFIRM_PASSWORD)).toBeInTheDocument()
+
+    });
+    test("Should call the navigation after clicking on button", async () => {
+      const user = userEvent.setup()
+      await user.type(getElement("email"), "a@a.com")
+      await user.type(getElement("password"), "12345");
+      await user.type(getElement("confPassword"), "12345");
+
+      await user.click(getElement("Button"));
+
+      expect(mockUseNavigate).toHaveBeenCalledWith('/products')
 
     });
   })
