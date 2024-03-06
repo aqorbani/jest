@@ -33,13 +33,15 @@ export default function Products() {
           <div className="flex flex-wrap justify-around">
             <Filter setCategory={setCategory} />
           </div>
-          <div className="flex flex-wrap justify-around">
+          <ul className="flex flex-wrap justify-around">
             {
               allProducts.map((item: object) => (
-                <Card {...item} />
+                <li key={item.id}>
+                  <Card  {...item} />
+                </li>
               ))
             }
-          </div>
+          </ul>
         </>
       )
     }
